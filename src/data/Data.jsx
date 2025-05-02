@@ -14,7 +14,7 @@ import p3 from '../assets/project3.jpg';
 // src/data/heroData.jsx
 export const heroData = {
     name: "Tanvir Mahmud",
-    title: "JR. Software Engineer | Full-Stack Developer",
+    title: "Software Engineer | Full-Stack Developer",
     description: "I build scalable web applications with modern technologies. Passionate about solving complex problems through clean, efficient code and intuitive user experiences.",
     highlightColor: "#FF6500",
     secondaryColor: "#1E3E62",
