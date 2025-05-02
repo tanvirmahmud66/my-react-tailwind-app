@@ -1,9 +1,15 @@
 import me from '../assets/me.jpeg'
 import image1 from '../assets/image1.svg'
 // src/data/projectsData.jsx
-import p1 from '../assets/project1.jpg';
-import p2 from '../assets/project2.jpg';
-import p3 from '../assets/project3.jpg';
+import p1 from '../assets/eminent.png';
+import p2 from '../assets/melody.png';
+import p3 from '../assets/binimoy.png';
+import p4 from '../assets/project1.jpg';
+import p5 from '../assets/project3.jpg';
+import p6 from '../assets/amarshop.png';
+import p7 from '../assets/awh.png';
+import resume from '../assets/Tanvir_Mahmud_resume.pdf'
+
 
 
 
@@ -14,7 +20,7 @@ import p3 from '../assets/project3.jpg';
 // src/data/heroData.jsx
 export const heroData = {
     name: "Tanvir Mahmud",
-    title: "JR. Software Engineer | Full-Stack Developer",
+    title: "Software Engineer | Full-Stack Developer",
     description: "I build scalable web applications with modern technologies. Passionate about solving complex problems through clean, efficient code and intuitive user experiences.",
     highlightColor: "#FF6500",
     secondaryColor: "#1E3E62",
@@ -88,7 +94,7 @@ export const aboutData = {
         {
             type: 'download',
             text: 'Download CV',
-            url: '../assets/Tanvir_Mahmud_resume.pdf',
+            url: resume,
             icon: (
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -134,38 +140,42 @@ export const experienceData = {
         duration: "2024 - Present",
         description: [
           "Developed real estate portfolio website using Frappe ERPNext with lead generation features",
-          "Built accounting, project accounting, and inventory modules for builder companies",
+          "Built accounting, project accounting, sales, purchase, and inventory modules for builder companies",
           "Implemented CI/CD pipelines via GitHub for multiple projects",
           "Handled client requirement gathering, analysis, and training",
           "Developed hotel management system with booking website and back-office operations"
         ],
-        tags: ["Frappe", "ERPNext", "Python", "JavaScript", "CI/CD", "VPS"]
+        tags: ["Frappe", "ERPNext", "Python", "JavaScript", "CI/CD", "VPS", "Azure", "Git & Github", "Agile"]
       },
-      {
-        role: "Software Developer Intern",
-        company: "Tech Solutions Inc.",
-        duration: "2023 - 2024",
-        description: [
-          "Assisted in developing web applications using React and Node.js",
-          "Participated in code reviews and team meetings",
-          "Fixed bugs and implemented small features"
-        ],
-        tags: ["React", "Node.js", "JavaScript"]
-      }
     ],
     projects: {
       title: "Key",
       items: [
         {
           name: "Eminent Properties Limited",
-          description: "Builder Company, accounting and project accounting application with all kinds of report and dashboard",
-          tags: ["Frappe", "ERPNext", "VPS"]
+          description: "Builder Company, accounting, project accounting, sales, purchase, stock management, and website application with all kinds of report and dashboard",
+          tags: ["Frappe", "ERPNext", "Accounting", "Project Management", "Sales","Purchase", "Inventory","Reports", "Website","VPS"]
         },
         {
           name: "Melody Housing Agency",
-          description: "Real estate website with lead generation and custom features",
-          tags: ["Frappe", "ERPNext", "VPS"]
-        }
+          description: "Real estate website for property portfolio website with lead generation and custom features",
+          tags: ["Frappe", "ERPNext", "Tailwind","Jinja Template Engine","Builder Patterns","CI/CD", "Github", "VPS", "Deployment"]
+        },
+        {
+          name: "Binimoy Properties Limited",
+          description: "Covers accounting, project finances, sales, purchases, and stock with dashboards and reports for real-time insights.",
+          tags: ["Frappe", "ERPNext", "Accounting","Project Management","Inventory", "Reports", "Custom","Invoice", "Invoice Template", "Requirement Gathering", "Training"]
+        },
+        {
+          name: "ATS - Applicant Traking System",
+          description: "Built an Applicant Tracking System (ATS) using Frappe, ERPNext, and HRM for streamlined recruitment management.",
+          tags: ["Frappe", "ERPNext", "HRM", "Payroll", "Role Permission Management","Deployment", "VPS"]
+        },
+        {
+          name: "HMS - Hotel Management System",
+          description: "Built an Applicant Tracking System (ATS) using Frappe, ERPNext, and HRM for streamlined recruitment management.",
+          tags: ["Frappe", "ERPNext", "Booking System", "CMS", "Payment System","sslcommerz", "Retaurent POS","KYC","Check IN/OUT","VPS"]
+        },
       ]
     }
   };
@@ -304,75 +314,11 @@ export const projectsData = {
   secondaryColor: "#1E3E62",
   projects: [
     {
-      id: 'melody-housing-agency',
-      title: 'Melody Housing Agency',
-      description: 'Real estate portfolio website with lead generation features using Frappe ERPNext',
-      tags: ['Frappe', 'ERPNext', 'JavaScript', 'VPS'],
-      image: p1,
-      details: [
-        'Developed custom features based on client requirements',
-        'Implemented lead generation system',
-        'Deployed on VPS with CI/CD via GitHub'
-      ],
-      liveUrl: 'https://melodyhousing.com',
-      githubUrl: null,
-      role: 'Lead Developer',
-      duration: '6 months'
-    },
-    {
-      id: 'binimoy-properties-erp',
-      title: 'Binimoy Properties ERP',
-      description: 'ERP system for builder company with accounting and project modules',
-      tags: ['Accounting', 'Project Accounting', 'Inventory', 'Reports'],
-      image: p2,
-      details: [
-        'Developed modules for accounting and project accounting',
-        'Created custom financial reports',
-        'Handled client training and ongoing support'
-      ],
-      liveUrl: null,
-      githubUrl: null,
-      role: 'Full-stack Developer',
-      duration: '8 months'
-    },
-    {
-      id: 'hotel-management-system',
-      title: 'Hotel Management System',
-      description: 'Complete hotel booking solution with backoffice operations',
-      tags: ['Booking System', 'POS', 'KYC', 'Payments'],
-      image: p3,
-      details: [
-        'Developed check-in/out system',
-        'Integrated payment gateway',
-        'Created backoffice management interface'
-      ],
-      liveUrl: null,
-      githubUrl: null,
-      role: 'Lead Developer',
-      duration: '5 months'
-    },
-    {
-      id: 'attendance-tracking-system',
-      title: 'Attendance Tracking System',
-      description: 'HRM system with employee attendance and payroll',
-      tags: ['Attendance', 'Payroll', 'HR Management'],
-      image: p1,
-      details: [
-        'Developed attendance tracking module',
-        'Created employee management system',
-        'Streamlined HR back-office operations'
-      ],
-      liveUrl: null,
-      githubUrl: null,
-      role: 'Developer',
-      duration: '3 months'
-    },
-    {
       id: 'eminent-properties-erp',
       title: 'Eminent Properties ERP',
       description: 'ERP system aligned with legacy software',
-      tags: ['Accounting', 'Legacy Integration', 'CI/CD'],
-      image: p2,
+      tags: ['ERPNext', 'Frappe', 'Leagacy Integration'],
+      image: p1,
       details: [
         'Developed accounting modules',
         'Integrated with existing legacy systems',
@@ -382,7 +328,102 @@ export const projectsData = {
       githubUrl: null,
       role: 'Full-stack Developer',
       duration: '4 months'
-    }
+    },
+    {
+      id: 'melody-housing-agency',
+      title: 'Melody Housing Agency',
+      description: 'Real estate portfolio website with lead generation features using Frappe ERPNext',
+      tags: ['Frappe', 'ERPNext', 'JavaScript', 'VPS'],
+      image: p2,
+      details: [
+        'Developed custom features based on client requirements',
+        'Implemented lead generation system',
+        'Deployed on VPS with CI/CD via GitHub'
+      ],
+      liveUrl: 'https://melody.glascutr.com',
+      githubUrl: null,
+      role: 'Full-Stack Developer',
+      duration: '3 months'
+    },
+    {
+      id: 'binimoy-properties-erp',
+      title: 'Binimoy Properties ERP',
+      description: 'ERP system for builder company with accounting and project modules',
+      tags: ['Accounting', 'Project Accounting', 'Inventory', 'Reports'],
+      image: p3,
+      details: [
+        'Developed modules for accounting and project accounting',
+        'Created custom financial reports',
+        'Handled client training and ongoing support'
+      ],
+      liveUrl: null,
+      githubUrl: null,
+      role: 'Developer',
+      duration: '3 months'
+    },
+    {
+      id: 'hotel-management-system',
+      title: 'Hotel Management System',
+      description: 'Complete hotel booking solution with backoffice operations',
+      tags: ['Booking System', 'POS', 'sslcommerz'],
+      image: p4,
+      details: [
+        'Developed check-in/out system',
+        'Integrated payment gateway',
+        'Created backoffice management interface'
+      ],
+      liveUrl: null,
+      githubUrl: null,
+      role: 'Full-Stack Developer',
+      duration: '2 months'
+    },
+    {
+      id: 'attendance-tracking-system',
+      title: 'Attendance Tracking System',
+      description: 'HRM system with employee attendance and payroll',
+      tags: ['Attendance', 'Payroll', 'HR Management'],
+      image: p5,
+      details: [
+        'Developed attendance tracking module',
+        'Created employee management system',
+        'Streamlined HR back-office operations'
+      ],
+      liveUrl: null,
+      githubUrl: null,
+      role: 'Developer',
+      duration: '2 months'
+    },
+    {
+      id: 'amarshop-website-erp-django',
+      title: 'Amarshop - Ecommerce ERP',
+      description: 'Ecommerce with inventory, sale, and purchase build with Django',
+      tags: ['Django', 'Ecommerce', 'ERP with Django'],
+      image: p6,
+      details: [
+        'Custom Ecommerce ERP for Small Business',
+        'Custom Admin Dashboard & Website',
+      ],
+      liveUrl: null,
+      githubUrl: null,
+      role: 'Full-Stack Developer',
+      duration: '5 months'
+    },
+    {
+      id: 'awa-software-house',
+      title: 'AWA Software House',
+      description: 'Portfolio Website for Software Company',
+      tags: ['React', 'Tailwind', 'Deployment'],
+      image: p7,
+      details: [
+        'Software company portfolio website',
+        'Custom Admin Dashboard & Website',
+      ],
+      liveUrl: 'https://awasoftwarehouse.netlify.app/',
+      githubUrl: null,
+      role: 'Developer',
+      duration: '1 months'
+    },
+    
   ]
 };
 
@@ -528,7 +569,7 @@ export const projectDetailsData = {
 
 // src/data/educationData.jsx
 export const educationData = {
-    title: "Academic Journey",
+    title: "Academic",
     subtitle: "My formal education and academic achievements",
     highlightColor: "#FF6500",
     secondaryColor: "#1E3E62",
@@ -542,7 +583,7 @@ export const educationData = {
           "Specialized in software development",
           "Completed comprehensive computer science curriculum"
         ],
-        tags: ["Algorithms", "Data Structures", "Database"],
+        tags: ["Algorithms", "Data Structures", "Database", "Software Engineeing", "Project", "ACM"],
         icon: "🎓"
       },
       {
@@ -552,19 +593,19 @@ export const educationData = {
         highlights: [
           "GPA: 5.0/5.0",
           "Science Division",
-          "Focus on Mathematics and Physics"
+          "Rajshahi Board"
         ],
         tags: ["Mathematics", "Physics", "Chemistry"],
         icon: "📚"
       },
       {
         degree: "Secondary School Certificate (S.S.C)",
-        institution: "Islami Academy High School, Rajshahi",
+        institution: "Islami Academy High School, Technical & Agriculture College ",
         duration: "2014",
         highlights: [
           "GPA: 5.0/5.0",
           "Science Division",
-          "Early interest in computer studies"
+          "Rajshahi Board"
         ],
         tags: ["Science", "Mathematics", "Computer"],
         icon: "🏫"
