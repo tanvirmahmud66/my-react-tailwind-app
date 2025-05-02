@@ -106,7 +106,7 @@ const Hero = () => {
                                 href={heroData.links.resume.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`flex items-center px-4 py-2 border border-[${heroData.highlightColor}] text-sm font-medium rounded-md text-[${heroData.highlightColor}] hover:text-white hover:bg-[${heroData.highlightColor}] transition-all duration-300 hover:scale-105`}
+                                className={`flex items-center justify-center px-4 py-2 border border-[${heroData.highlightColor}] text-sm font-medium rounded-md text-[${heroData.highlightColor}] hover:text-white hover:bg-[${heroData.highlightColor}] transition-all duration-300 hover:scale-105`}
                             >
                                 {heroData.links.resume.icon}
                                 {heroData.links.resume.text}
