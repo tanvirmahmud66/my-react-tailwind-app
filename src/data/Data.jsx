@@ -4,7 +4,7 @@ import image1 from '../assets/image1.svg'
 import p1 from '../assets/eminent.png';
 import p2 from '../assets/melody.png';
 import p3 from '../assets/binimoy.png';
-import p4 from '../assets/project1.jpg';
+import p4 from '../assets/hms.png';
 import p5 from '../assets/project3.jpg';
 import p6 from '../assets/amarshop.png';
 import p7 from '../assets/awh.png';
