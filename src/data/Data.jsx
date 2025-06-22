@@ -136,8 +136,21 @@ export const experienceData = {
   experiences: [
     {
       role: "Junior Software Engineer",
+      company: "Panam Group",
+      duration: "2025 - Present",
+      description: [
+        "Developed real estate portfolio website using Frappe ERPNext with lead generation features",
+        "Built accounting, project accounting, sales, purchase, and inventory modules for builder companies",
+        "Implemented CI/CD pipelines via GitHub for multiple projects",
+        "Handled client requirement gathering, analysis, and training",
+        "Developed hotel management system with booking website and back-office operations"
+      ],
+      tags: ["Frappe", "ERPNext", "Python", "JavaScript", "Networking", "PyQt5"]
+    },
+    {
+      role: "Junior Software Engineer",
       company: "Glascutt Limited",
-      duration: "2024 - Present",
+      duration: "2024 - 2025",
       description: [
         "Developed real estate portfolio website using Frappe ERPNext with lead generation features",
         "Built accounting, project accounting, sales, purchase, and inventory modules for builder companies",
@@ -147,6 +160,7 @@ export const experienceData = {
       ],
       tags: ["Frappe", "ERPNext", "Python", "JavaScript", "CI/CD", "VPS", "Azure", "Git & Github", "Agile"]
     },
+    
   ],
   projects: {
     title: "Key",
