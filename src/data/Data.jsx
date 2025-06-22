@@ -135,20 +135,18 @@ export const experienceData = {
   secondaryColor: "#1E3E62",
   experiences: [
     {
-      role: "Junior Software Engineer",
+      role: "Jr. Software Engineer",
       company: "Panam Group",
       duration: "2025 - Present",
       description: [
-        "Developed real estate portfolio website using Frappe ERPNext with lead generation features",
-        "Built accounting, project accounting, sales, purchase, and inventory modules for builder companies",
+        "Developing ERPnext Manufacturing Module for Metro Dying Limited",
+        "Developing Assets Maintenance Module for Tracking Manufacturing Machineries",
         "Implemented CI/CD pipelines via GitHub for multiple projects",
-        "Handled client requirement gathering, analysis, and training",
-        "Developed hotel management system with booking website and back-office operations"
       ],
       tags: ["Frappe", "ERPNext", "Python", "JavaScript", "Networking", "PyQt5"]
     },
     {
-      role: "Junior Software Engineer",
+      role: "Former Jr. Software Engineer",
       company: "Glascutt Limited",
       duration: "2024 - 2025",
       description: [
