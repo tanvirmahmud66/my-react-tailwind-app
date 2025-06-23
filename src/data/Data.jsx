@@ -138,6 +138,7 @@ export const experienceData = {
       role: "Jr. Software Engineer",
       company: "Panam Group",
       duration: "2025 - Present",
+      type: "Full-time",
       description: [
         "Developing ERPnext Manufacturing Module for Metro Dying Limited",
         "Developing Assets Maintenance Module for Tracking Manufacturing Machineries",
@@ -149,6 +150,7 @@ export const experienceData = {
       role: "Former Jr. Software Engineer",
       company: "Glascutt Limited",
       duration: "2024 - 2025",
+      type: "Full-time",
       description: [
         "Developed real estate portfolio website using Frappe ERPNext with lead generation features",
         "Built accounting, project accounting, sales, purchase, and inventory modules for builder companies",
@@ -200,7 +202,7 @@ export const experienceData = {
 
 // src/data/skillsData.jsx
 export const skillsData = {
-  title: "Technical Skills",
+  title: "Technical",
   subtitle: "Technologies and tools I work with regularly",
   highlightColor: "#FF6500",
   secondaryColor: "#1E3E62",
@@ -320,7 +322,7 @@ export const skillsData = {
 
 
 export const projectsData = {
-  title: "My Projects",
+  title: "My",
   subtitle: "Key projects developed during my tenure at Glascutt Limited",
   highlightColor: "#FF6500",
   secondaryColor: "#1E3E62",
@@ -336,7 +338,7 @@ export const projectsData = {
         'Integrated with existing legacy systems',
         'Managed CI/CD with GitHub'
       ],
-      liveUrl: null,
+      liveUrl: 'https://eminent.glascutr.com',
       githubUrl: null,
       role: 'Full-stack Developer',
       duration: '3 months'
@@ -352,7 +354,7 @@ export const projectsData = {
         'Implemented lead generation system',
         'Deployed on VPS with CI/CD via GitHub'
       ],
-      liveUrl: 'https://melody.glascutr.com',
+      liveUrl: 'https://melodyhousingagency.com/',
       githubUrl: null,
       role: 'Full-Stack Developer',
       duration: '3 months'
@@ -415,7 +417,7 @@ export const projectsData = {
         'Custom Ecommerce ERP for Small Business',
         'Custom Admin Dashboard & Website',
       ],
-      liveUrl: null,
+      liveUrl: 'https://tanvir62.pythonanywhere.com/admin-panel/',
       githubUrl: null,
       role: 'Full-Stack Developer',
       duration: '6 months'
@@ -472,7 +474,7 @@ export const projectDetailsData = {
           description: 'Realbook accounting solution'
         }
       ],
-      liveUrl: null,
+      liveUrl: 'https://eminent.glascutr.com',
       githubUrl: null,
       role: 'Full-stack Developer',
       duration: '3 months',
@@ -521,7 +523,7 @@ export const projectDetailsData = {
           description: '"The system transformed our operations and gave us real-time visibility into our business."'
         }
       ],
-      liveUrl: 'https://melody.glascutr.com',
+      liveUrl: 'https://melodyhousingagency.com/',
       githubUrl: null,
       role: 'Full-stack Developer',
       duration: '3 months',

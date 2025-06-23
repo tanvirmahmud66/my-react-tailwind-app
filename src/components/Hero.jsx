@@ -121,13 +121,13 @@ const Hero = () => {
                     >
                         <div className="relative group w-full max-w-md">
                             <motion.div
-                                className={`absolute -inset-1 bg-[${heroData.secondaryColor}] rounded-md blur opacity-75 group-hover:opacity-100 transition-all duration-300`}
+                                className={`absolute -inset-1 bg-[${heroData.secondaryColor}] rounded-md lg:rounded-full blur opacity-75 group-hover:opacity-100 transition-all duration-300`}
                                 whileHover={{ scale: 1.02 }}
                             />
                             <motion.img
                                 src={heroData.image.src}
                                 alt={heroData.image.alt}
-                                className={`relative w-full h-auto rounded-md border-2 border-[${heroData.secondaryColor}] object-cover shadow-lg transform transition-transform duration-500 group-hover:scale-[1.02]`}
+                                className={`relative w-full h-auto rounded-md lg:rounded-full border-2 border-[${heroData.secondaryColor}] object-cover shadow-lg transform transition-transform duration-500 group-hover:scale-[1.02]`}
                                 whileHover={{ scale: 1.02 }}
                             />
                         </div>
