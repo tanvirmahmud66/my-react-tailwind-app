@@ -8,6 +8,7 @@ import p4 from '../assets/hms.png';
 import p5 from '../assets/project3.jpg';
 import p6 from '../assets/amarshop.png';
 import p7 from '../assets/awh.png';
+import hvac from '../assets/hvac.png';
 import resume from '../assets/Tanvir_Mahmud_resume.pdf'
 
 
@@ -380,7 +381,7 @@ export const projectsData = {
       title: 'Summit HVAC Solutions',
       description: 'Service management system for HVAC company with scheduling and invoicing features',
       tags: ['Service Management', 'CRM', 'Invoicing', 'Scheduling'],
-      image: p4, // Replace with actual image reference
+      image: hvac, // Replace with actual image reference
       details: [
         'Built job scheduling and technician assignment module',
         'Integrated invoicing and customer management features',
