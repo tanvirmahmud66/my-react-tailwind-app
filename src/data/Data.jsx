@@ -376,6 +376,22 @@ export const projectsData = {
       duration: '2 months'
     },
     {
+      id: 'summit-hvac-solutions',
+      title: 'Summit HVAC Solutions',
+      description: 'Service management system for HVAC company with scheduling and invoicing features',
+      tags: ['Service Management', 'CRM', 'Invoicing', 'Scheduling'],
+      image: p4, // Replace with actual image reference
+      details: [
+        'Built job scheduling and technician assignment module',
+        'Integrated invoicing and customer management features',
+        'Implemented responsive UI for easy field access'
+      ],
+      liveUrl: 'https://hvacbd.netlify.app/',
+      githubUrl: 'https://github.com/tanvirmahmud66/product_portfolio_template_1',
+      role: 'Product Owner',
+      duration: '1 months'
+    },
+    {
       id: 'hotel-management-system',
       title: 'Hotel Management System',
       description: 'Complete hotel booking solution with backoffice operations',
