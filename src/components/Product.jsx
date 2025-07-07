@@ -96,7 +96,7 @@ const Products = () => {
           </motion.h3>
 
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             variants={container}
           >
             {productsData.completed.items.map((product, index) => (
@@ -107,9 +107,9 @@ const Products = () => {
                 whileHover={cardHover}
               >
                 {/* Status indicator */}
-                <div className={`absolute top-4 right-4 px-2 py-1 text-xs rounded-full ${statusColors[product.status]} text-white`}>
+                {/* <div className={`absolute top-4 right-4 px-2 py-1 text-xs rounded-full ${statusColors[product.status]} text-white`}>
                   {product.status}
-                </div>
+                </div> */}
                 
                 <h4 className="text-xl font-bold text-white mb-2 pr-8">{product.title}</h4>
                 <p className="text-gray-300 mb-4">{product.description}</p>
