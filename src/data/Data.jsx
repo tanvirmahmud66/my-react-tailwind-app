@@ -90,7 +90,7 @@ export const aboutData = {
     { title: "Education", value: "B.Sc. in CSE, Stamford University" },
     {
       title: "Experience",
-      value: "Junior Software Engineer at Glascutt Limited",
+      value: "Junior Software Engineer at Panam Group",
     },
   ],
   buttons: [
