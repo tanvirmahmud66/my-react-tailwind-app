@@ -1,14 +1,19 @@
 import me from "../assets/me.jpeg";
 import image1 from "../assets/image1.svg";
 // src/data/projectsData.jsx
-import p1 from "../assets/eminent.png";
-import p2 from "../assets/melody.png";
-import p3 from "../assets/binimoy.png";
-import p4 from "../assets/hms.png";
-import p5 from "../assets/project3.jpg";
-import p6 from "../assets/amarshop.png";
-import p7 from "../assets/awh.png";
-import resume from "../assets/Tanvir_Mahmud_resume.pdf";
+
+import p1 from '../assets/eminent.png';
+import p2 from '../assets/melody.png';
+import p3 from '../assets/binimoy.png';
+import p4 from '../assets/hms.png';
+import p5 from '../assets/project3.jpg';
+import p6 from '../assets/amarshop.png';
+import p7 from '../assets/awh.png';
+import hvac from '../assets/hvac.png';
+import resume from '../assets/Tanvir_Mahmud_resume.pdf'
+
+
+
 
 // src/data/heroData.jsx
 export const heroData = {
@@ -469,10 +474,27 @@ export const projectsData = {
       duration: "2 months",
     },
     {
-      id: "hotel-management-system",
-      title: "Hotel Management System",
-      description: "Complete hotel booking solution with backoffice operations",
-      tags: ["Booking System", "POS", "sslcommerz"],
+
+      id: 'summit-hvac-solutions',
+      title: 'Summit HVAC Solutions',
+      description: 'Service management system for HVAC company with scheduling and invoicing features',
+      tags: ['Service Management', 'CRM', 'Invoicing', 'Scheduling'],
+      image: hvac, // Replace with actual image reference
+      details: [
+        'Built job scheduling and technician assignment module',
+        'Integrated invoicing and customer management features',
+        'Implemented responsive UI for easy field access'
+      ],
+      liveUrl: 'https://hvacbd.netlify.app/',
+      githubUrl: 'https://github.com/tanvirmahmud66/product_portfolio_template_1',
+      role: 'Product Owner',
+      duration: '1 months'
+    },
+    {
+      id: 'hotel-management-system',
+      title: 'Hotel Management System',
+      description: 'Complete hotel booking solution with backoffice operations',
+      tags: ['Booking System', 'POS', 'sslcommerz'],
       image: p4,
       details: [
         "Developed check-in/out system",
