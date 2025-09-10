@@ -1,40 +1,26 @@
-import { motion } from 'framer-motion';
+
+
+import { motion } from "framer-motion";
 import { 
-  FiMail, 
-  FiPhone, 
-  FiMapPin, 
-  FiSend, 
-  FiLinkedin, 
-  FiGithub, 
-  FiTwitter,
-  FiCheckCircle,
-  FiAlertCircle,
-  FiX
-} from 'react-icons/fi';
-import { contactData } from '../data/Data';
-import { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+  FiMail, FiPhone, FiMapPin, FiSend, FiLinkedin, FiGithub, FiTwitter,
+  FiCheckCircle, FiAlertCircle, FiX
+} from "react-icons/fi";
+import { contactData } from "../data/Data";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // Initialize EmailJS
 emailjs.init("R4UoeY_S5OIpxepwU");
 
-const iconComponents = {
-  FiMail,
-  FiPhone,
-  FiMapPin,
-  FiLinkedin,
-  FiGithub,
-  FiTwitter
-};
+const iconComponents = { FiMail, FiPhone, FiMapPin, FiLinkedin, FiGithub, FiTwitter };
 
-// Custom Toast Component
 const CustomToast = ({ type, message, closeToast }) => {
-  const bgColor = type === 'success' ? 'from-green-500/10 to-green-800/20' : 'from-red-500/10 to-red-800/20';
-  const borderColor = type === 'success' ? 'border-l-green-400' : 'border-l-red-400';
-  const Icon = type === 'success' ? FiCheckCircle : FiAlertCircle;
-  const iconColor = type === 'success' ? 'text-green-400' : 'text-red-400';
+  const bgColor = type === "success" ? "from-green-500/10 to-green-800/20" : "from-red-500/10 to-red-800/20";
+  const borderColor = type === "success" ? "border-l-green-400" : "border-l-red-400";
+  const Icon = type === "success" ? FiCheckCircle : FiAlertCircle;
+  const iconColor = type === "success" ? "text-green-400" : "text-red-400";
 
   return (
     <div className={`w-full max-w-md bg-gradient-to-r ${bgColor} ${borderColor} border-l-4 rounded-lg shadow-lg`}>
@@ -44,28 +30,30 @@ const CustomToast = ({ type, message, closeToast }) => {
         </div>
         <div className="ml-3 flex-1">
           <div className="flex justify-between">
-            <p className="text-sm font-medium text-white">
-              {type === 'success' ? 'Success!' : 'Error!'}
-            </p>
-            <button 
-              onClick={closeToast}
-              className="text-gray-400 hover:text-white focus:outline-none"
-            >
+            <p className="text-sm font-medium text-white">{type === "success" ? "Success!" : "Error!"}</p>
+            <button onClick={closeToast} className="text-gray-400 hover:text-white focus:outline-none">
               <FiX className="w-4 h-4" />
             </button>
           </div>
-          <p className="mt-1 text-sm text-gray-300">
-            {message}
-          </p>
+          <p className="mt-1 text-sm text-gray-300">{message}</p>
         </div>
       </div>
     </div>
   );
 };
 
-const Contact = () => {
-  const form = useRef();
+const Contact = ({ theme }) => {
+  const ref = useRef();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const isDark = theme === "dark";
+
+  // Colors
+  const bgColor = isDark ? "#0B192C" : "#ffffff";
+  const cardBg = isDark ? "rgba(30,62,98,0.2)" : "rgba(243,244,246,0.2)";
+  const borderColor = isDark ? "#1E3E62" : "#D1D5DB";
+  const textColor = isDark ? "#ffffff" : "#111827";
+  const subTextColor = isDark ? "#D1D5DB" : "#6B7280";
+  const accentColor = "#FF6500";
 
   const Icon = ({ name }) => {
     const IconComponent = iconComponents[name];
@@ -77,60 +65,29 @@ const Contact = () => {
     setIsSubmitting(true);
 
     emailjs.sendForm(
-      'service_16nmfoe',
-      'template_g9eakir',
-      form.current,
-      'R4UoeY_S5OIpxepwU'
+      "service_16nmfoe",
+      "template_g9eakir",
+      ref.current,
+      "R4UoeY_S5OIpxepwU"
     )
-    .then((result) => {
+    .then(() => {
       toast(
-        ({ closeToast }) => (
-          <CustomToast 
-            type="success" 
-            message="Your message has been sent successfully!" 
-            closeToast={closeToast} 
-          />
-        ),
-        {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: true,
-          closeButton: false,
-          pauseOnHover: true,
-          draggable: true,
-          className: 'toast-message'
-        }
+        ({ closeToast }) => <CustomToast type="success" message="Your message has been sent successfully!" closeToast={closeToast} />,
+        { position: "top-right", autoClose: 5000, hideProgressBar: true, closeButton: false, pauseOnHover: true, draggable: true }
       );
-      form.current.reset();
-    }, (error) => {
-      toast(
-        ({ closeToast }) => (
-          <CustomToast 
-            type="error" 
-            message="Failed to send message. Please try again later." 
-            closeToast={closeToast} 
-          />
-        ),
-        {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: true,
-          closeButton: false,
-          pauseOnHover: true,
-          draggable: true,
-          className: 'toast-message'
-        }
-      );
-      console.error('EmailJS Error:', error);
+      ref.current.reset();
     })
-    .finally(() => {
-      setIsSubmitting(false);
-    });
+    .catch(() => {
+      toast(
+        ({ closeToast }) => <CustomToast type="error" message="Failed to send message. Please try again later." closeToast={closeToast} />,
+        { position: "top-right", autoClose: 5000, hideProgressBar: true, closeButton: false, pauseOnHover: true, draggable: true }
+      );
+    })
+    .finally(() => setIsSubmitting(false));
   };
 
   return (
-    <section id="contact" className="relative py-20 bg-[#0B192C] border-t border-[#1E3E62] overflow-hidden">
-      {/* Custom Toast Container */}
+    <section id="contact" className="relative py-20 overflow-hidden transition-colors duration-300" style={{ backgroundColor: bgColor }} ref={ref}>
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -144,96 +101,59 @@ const Contact = () => {
         toastClassName="!bg-transparent !p-0 !m-0 !mb-3 !shadow-none !overflow-visible"
         bodyClassName="!p-0 !m-0"
       />
-      
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSJub25lIiBzdHJva2U9IiNGRjY1MDAiIHN0cm9rZS13aWR0aD0iMC41Ij48cGF0aCBkPSJNMCAwaDQwdDQwdjQwSDB6Ii8+PC9zdmc+')]"></div>
-      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        {/* Header */}
         <div className="text-center mb-16">
-          <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-white"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            {contactData.title} <span className="text-[#FF6500]">Connect</span>
+          <motion.h2 className="text-4xl md:text-5xl font-bold" style={{ color: textColor }} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            {contactData.title} <span style={{ color: accentColor }}>Connect</span>
           </motion.h2>
-          <motion.div 
-            className="w-24 h-1 bg-gradient-to-r from-[#FF6500] to-transparent mx-auto mt-6"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          />
-          <motion.p 
-            className="text-gray-400 mt-6 max-w-2xl mx-auto text-lg"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
+          <motion.div className="w-24 h-1 mx-auto mt-6" style={{ backgroundColor: accentColor }} initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.8, delay: 0.3 }} />
+          <motion.p className="mt-6 max-w-2xl mx-auto text-lg" style={{ color: subTextColor }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.6 }}>
             {contactData.subtitle}
           </motion.p>
         </div>
 
-        <div className="flex flex-col xl:flex-row gap-0 bg-[#0B192C] rounded-xl overflow-hidden shadow-2xl">
-          {/* Left Side - Contact Info */}
-          <div className="w-full xl:w-2/5 bg-[#1E3E62]/20 p-8 md:p-12 backdrop-blur-sm">
-            <motion.div 
-              className="space-y-8"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <h3 className="text-2xl font-bold text-white mb-6">{contactData.contactInfo.title}</h3>
+        <div className="flex flex-col xl:flex-row gap-0 rounded-xl overflow-hidden shadow-2xl">
+          {/* Left - Contact Info */}
+          <div className="w-full xl:w-2/5 p-8 md:p-12" style={{ backgroundColor: cardBg }}>
+            <div className="space-y-8">
+              <h3 className="text-2xl font-bold mb-6" style={{ color: textColor }}>{contactData.contactInfo.title}</h3>
               
               {contactData.contactInfo.items.map((item, index) => (
                 <div key={index} className="flex items-start gap-4">
-                  <div className="p-3 bg-gradient-to-br from-[#FF6500] to-[#E55C00] rounded-lg flex-shrink-0 shadow-md">
+                  <div className={`p-3 rounded-lg flex-shrink-0`} style={{ background: `linear-gradient(135deg, ${accentColor}55, ${accentColor}aa)` }}>
                     <Icon name={item.icon} />
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-white mb-1">{item.title}</h4>
+                    <h4 className="text-lg font-semibold mb-1" style={{ color: textColor }}>{item.title}</h4>
                     {item.link ? (
-                      <a 
-                        href={item.link} 
-                        className="text-gray-300 hover:text-[#FF6500] transition-colors"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href={item.link} target="_blank" rel="noopener noreferrer" style={{ color: subTextColor }} className="hover:text-[#FF6500] transition-colors">
                         {item.value}
                       </a>
                     ) : (
-                      <p className="text-gray-300">{item.value}</p>
+                      <p style={{ color: subTextColor }}>{item.value}</p>
                     )}
                   </div>
                 </div>
               ))}
 
               <div className="pt-4">
-                <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
+                <h4 className="text-lg font-semibold mb-4" style={{ color: textColor }}>Follow Me</h4>
                 <div className="flex space-x-4">
                   {contactData.socialLinks.map((social, index) => (
-                    <a 
-                      key={index}
-                      href={social.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="p-3 bg-[#1E3E62]/50 rounded-lg text-gray-300 hover:text-[#FF6500] hover:bg-[#1E3E62]/80 transition-colors shadow-md"
-                      aria-label={social.name}
-                    >
+                    <a key={index} href={social.url} target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg transition-colors" style={{ backgroundColor: cardBg, color: subTextColor }} aria-label={social.name}>
                       <Icon name={social.icon} />
                     </a>
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
 
-          {/* Right Side - Map and Form */}
+          {/* Right - Map & Form */}
           <div className="w-full xl:w-3/5 flex flex-col">
-            {/* Map Section */}
-            <div className="h-64 md:h-80 w-full bg-[#1E3E62]/30">
+            <div className="h-64 md:h-80 w-full" style={{ backgroundColor: cardBg }}>
               <iframe
                 src={contactData.mapEmbedUrl}
                 width="100%"
@@ -242,81 +162,52 @@ const Contact = () => {
                 allowFullScreen=""
                 loading="lazy"
                 title="Location Map"
-              ></iframe>
+              />
             </div>
 
-            {/* Form Section */}
-            <motion.form 
-              ref={form}
+            <motion.form
+              ref={ref}
               onSubmit={sendEmail}
-              className="p-8 md:p-12 space-y-6 bg-[#0B192C]"
+              className="p-8 md:p-12 space-y-6"
+              style={{ backgroundColor: bgColor }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              {/* Name Field */}
-              <div>
-                <label htmlFor="from_name" className="block text-gray-300 text-sm mb-2">
-                  Name
-                </label>
-                <input 
-                  id="from_name"
-                  name="from_name"
-                  type="text" 
-                  className="w-full px-4 py-3 bg-[#1E3E62]/50 border border-[#1E3E62] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#FF6500] transition-colors"
-                  placeholder="Your name"
-                  required
-                />
-              </div>
+              {["from_name","from_email","subject"].map((field, i) => (
+                <div key={i}>
+                  <label htmlFor={field} className="block text-sm mb-2" style={{ color: subTextColor }}>
+                    {field === "from_name" ? "Name" : field === "from_email" ? "Email" : "Subject"}
+                  </label>
+                  <input
+                    id={field}
+                    name={field}
+                    type={field === "from_email" ? "email" : "text"}
+                    className="w-full px-4 py-3 rounded-lg focus:outline-none transition-colors"
+                    placeholder={field === "from_name" ? "Your name" : field === "from_email" ? "Your email" : "Message subject"}
+                    required
+                    style={{ backgroundColor: cardBg, border: `1px solid ${borderColor}`, color: textColor }}
+                  />
+                </div>
+              ))}
 
-              {/* Email Field */}
               <div>
-                <label htmlFor="from_email" className="block text-gray-300 text-sm mb-2">
-                  Email
-                </label>
-                <input 
-                  id="from_email"
-                  name="from_email"
-                  type="email" 
-                  className="w-full px-4 py-3 bg-[#1E3E62]/50 border border-[#1E3E62] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#FF6500] transition-colors"
-                  placeholder="Your email"
-                  required
-                />
-              </div>
-
-              {/* Subject Field */}
-              <div>
-                <label htmlFor="subject" className="block text-gray-300 text-sm mb-2">
-                  Subject
-                </label>
-                <input 
-                  id="subject"
-                  name="subject"
-                  type="text" 
-                  className="w-full px-4 py-3 bg-[#1E3E62]/50 border border-[#1E3E62] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#FF6500] transition-colors"
-                  placeholder="Message subject"
-                  required
-                />
-              </div>
-
-              {/* Message Field */}
-              <div>
-                <label htmlFor="message" className="block text-gray-300 text-sm mb-2">
-                  Message
-                </label>
-                <textarea 
+                <label htmlFor="message" className="block text-sm mb-2" style={{ color: subTextColor }}>Message</label>
+                <textarea
                   id="message"
                   name="message"
-                  rows={5} 
-                  className="w-full px-4 py-3 bg-[#1E3E62]/50 border border-[#1E3E62] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#FF6500] transition-colors"
+                  rows={5}
                   placeholder="Your message"
                   required
-                ></textarea>
+                  className="w-full px-4 py-3 rounded-lg focus:outline-none transition-colors"
+                  style={{ backgroundColor: cardBg, border: `1px solid ${borderColor}`, color: textColor }}
+                />
               </div>
-              
+
               <motion.button
-                type="submit" 
-                className="w-full md:w-auto px-8 py-3 bg-gradient-to-r from-[#FF6500] to-[#E55C00] text-white rounded-lg hover:opacity-90 transition-opacity duration-300 flex items-center justify-center space-x-2 shadow-lg disabled:opacity-50"
+                type="submit"
+                className="w-full md:w-auto px-8 py-3 rounded-lg flex items-center justify-center space-x-2 shadow-lg disabled:opacity-50"
+                style={{ background: `linear-gradient(135deg, ${accentColor}, #E55C00)`, color: "#fff" }}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 disabled={isSubmitting}

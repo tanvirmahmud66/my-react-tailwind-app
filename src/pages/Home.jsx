@@ -8,17 +8,17 @@ import Experience from '../components/Experience'
 import Education from '../components/Education'
 import Products from '../components/Product'
 
-const Home = () => {
+const Home = ({theme}) => {
   return (
     <div>
-      <Hero id="hero" />
-      <About id="about" />
-      <Experience id="experience" />
-      <Skills id="skills" />
-      <Projects id="projects" />
-      <Education id="education"/>
-      <Products id="products"/>
-      <Contact id="contact" />
+      <Hero id="hero"  theme={theme}/>
+      <About id="about" theme={theme}/>
+      <Experience id="experience" theme={theme}/>
+      <Skills id="skills" theme={theme}/>
+      <Projects id="projects" theme={theme}/>
+      <Education id="education" theme={theme}/>
+      <Products id="products" theme={theme}/>
+      <Contact id="contact" theme={theme}/>
     </div>
   )
 }

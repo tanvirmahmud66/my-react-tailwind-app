@@ -11,15 +11,24 @@ import "ldrs/react/Infinity.css";
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [theme, setTheme] = useState("dark"); // theme state
 
   useEffect(() => {
-    // Simulate loading for 2 seconds (you can adjust)
+    // Loader timeout
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
-
     return () => clearTimeout(timer);
   }, []);
+
+  // Apply theme to <html>
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
 
   if (loading) {
     return (
@@ -38,18 +47,23 @@ function App() {
 
   return (
     <Router>
-      <div className="flex flex-col min-h-screen bg-[#0B192C]">
-        <Navbar />
+      {/* Page background follows theme */}
+      <div className="flex flex-col min-h-screen bg-white dark:bg-[#0B192C] text-black dark:text-white transition-colors duration-300">
+        {/* Pass theme + setter to Navbar */}
+        <Navbar theme={theme} setTheme={setTheme} />
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home theme={theme} />} />
             <Route path="/projects/:projectId" element={<ProjectDetails />} />
           </Routes>
         </main>
-        <Footer />
+        <Footer theme={theme}/>
       </div>
     </Router>
   );
 }
 
 export default App;
+
+
+
