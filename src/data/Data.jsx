@@ -70,7 +70,7 @@ export const heroData = {
 // src/data/aboutData.jsx
 export const aboutData = {
   title: "About",
-  subtitle: "Junior Software Engineer with expertise in full-stack development",
+  subtitle: "Software Engineer with expertise in full-stack web application development",
   highlightColor: "#FF6500",
   secondaryColor: "#1E3E62",
   image: {
@@ -80,14 +80,14 @@ export const aboutData = {
   profile: {
     title: "Professional Profile",
     description:
-      "Junior Software Engineer skilled in Python, JavaScript, and frameworks like Frappe ERPNext, Django, and React. Experienced in building scalable, user-focused solutions for accounting, project management, inventory, manufacturing, CRM, and HRM systems.",
+      "Software Engineer skilled in Python, JavaScript, and frameworks like Frappe ERPNext, Django, and React. Experienced in building scalable, user-focused solutions for accounting, project management, inventory, manufacturing, CRM, and HRM systems.",
   },
   info: [
     { title: "Name", value: "Tanvir Mahmud" },
     { title: "Email", value: "tanvirmahmud.cse66@gmail.com" },
     { title: "Phone", value: "+8801701744799" },
     { title: "Address", value: "Mailbag 1st Lane, DIT Road, Dhaka - 1217" },
-    { title: "Education", value: "B.Sc. in CSE, Stamford University" },
+    { title: "Education", value: "B.Sc. in Computer Science & Engineering (CSE), Stamford University Bangladesh" },
     {
       title: "Experience",
       value: "Junior Software Engineer at Panam Group",
@@ -157,6 +157,7 @@ export const aboutData = {
       "Material UI",
       "Data Structure",
       "Algorithms",
+      "PyQt5",
     ],
   },
 };
