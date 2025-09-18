@@ -1,5 +1,5 @@
-import me from "../assets/me.jpeg";
-import image1 from "../assets/image1.svg";
+import me from "../assets/image1.png";
+import image1 from "../assets/image2.png";
 // src/data/projectsData.jsx
 
 import p1 from '../assets/eminent.png';
