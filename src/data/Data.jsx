@@ -847,7 +847,6 @@ export const educationData = {
       institution: "Stamford University Bangladesh",
       duration: "2023",
       highlights: [
-        "CGPA: 3.17/4.0",
         "Specialized in software development",
         "Completed comprehensive computer science curriculum",
       ],
@@ -865,7 +864,7 @@ export const educationData = {
       degree: "Higher Secondary Certificate (H.S.C)",
       institution: "New Govt. Degree College, Rajshahi",
       duration: "2016",
-      highlights: ["GPA: 5.0/5.0", "Science Division", "Rajshahi Board"],
+      highlights: ["Science Division", "Rajshahi Board"],
       tags: ["Mathematics", "Physics", "Chemistry"],
       icon: "📚",
     },
@@ -874,7 +873,7 @@ export const educationData = {
       institution:
         "Islami Academy High School, Technical & Agriculture College ",
       duration: "2014",
-      highlights: ["GPA: 5.0/5.0", "Science Division", "Rajshahi Board"],
+      highlights: ["Science Division", "Rajshahi Board"],
       tags: ["Science", "Mathematics", "Computer"],
       icon: "🏫",
     },
